@@ -1,0 +1,5 @@
+sample_name	host	read_file1	read_file2	cds_file
+pig1	pig	sample/pig1_1.fastq.gz	sample/pig1_2.fastq.gz	sample/pig1_cds.fasta
+pig2	pig	sample/pig2_1.fastq.gz	sample/pig2_2.fastq.gz	sample/pig2_cds.fasta
+dog1	dog	sample/dog1_1.fastq.gz	sample/dog1_2.fastq.gz	sample/dog1_cds.fasta
+dog2	dog	sample/dog2_1.fastq.gz	sample/dog2_2.fastq.gz	sample/dog2_cds.fasta

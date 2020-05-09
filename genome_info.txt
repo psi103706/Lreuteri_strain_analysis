@@ -1,0 +1,12 @@
+genome_id	type	genome_file	cds_file
+complete1	complete	genome/complete1.fasta	cds/complete1.fasta
+complete2	complete	genome/complete2.fasta	cds/complete2.fasta
+complete3	complete	genome/complete3.fasta	cds/complete3.fasta
+ref1	ref	genome/ref1.fasta	cds/ref1.fasta
+ref2	ref	genome/ref2.fasta	cds/ref2.fasta
+ref3	ref	genome/ref3.fasta	cds/ref3.fasta
+ref4	ref	genome/ref4.fasta	cds/ref4.fasta
+ref5	ref	genome/ref5.fasta	cds/ref5.fasta
+out1	out	genome/out1.fasta	
+genus1	genus		cds/genus1.fasta
+genus2	genus		cds/genus2.fasta
