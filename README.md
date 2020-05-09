@@ -14,16 +14,16 @@ conda install -n reuteri_strain -c bioconda kraken --force-reinstall;
 
 #Pick genome-based strain types (GSTs) and build Kraken database from reference genome sequences
 
-python createGSTdb.py -i genome_info.txt -o pick_GST -d KrakenGST -f
+python createGSTdb.py -i genome_info.txt -o pick_GST -d KrakenGST
 
 #Build pan-genome database from reference genome sequences
 
-python createPangenome.py -i genome_info.txt -o Pangenome -f
+python createPangenome.py -i genome_info.txt -o Pangenome
 
 #Profile GST abundance of metagenomic samples
 
-python profileGST.py -i sample_info.txt -d KrakenGST -o gst_profile -f
+python profileGST.py -i sample_info.txt -d KrakenGST -o gst_profile
 
 #Profile gene composition of metagenomic samples
 
-python profileGene.py -i sample_info.txt -d Pangenome -o gene_profile -f
+python profileGene.py -i sample_info.txt -d Pangenome -o gene_profile
