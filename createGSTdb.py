@@ -10,8 +10,8 @@ from ete3 import Tree
 from util import run_process
 
 def extract_core_gene(df_genome_info, output_dir, core_gene_file_path, quiet):      
-    df_complete = df_genome_info[df_genome_info['type'] == 'complete']
-    '''
+    df_complete = df_genome_info[df_genome_info['type'] == 'complete']  
+    
     for i in range(df_complete.index.size):
         genome_id = df_complete.index.tolist()[i]
         proc = run_process("prokka {0} --outdir {1}/gff --prefix {2} --force".format(df_complete.loc[genome_id, 'genome_file'], output_dir, i + 1), print_only = False)
@@ -23,7 +23,7 @@ def extract_core_gene(df_genome_info, output_dir, core_gene_file_path, quiet):
     for line in iter(proc.stdout.readline, b''):
         if not quiet:
             print(line.decode('utf-8').rstrip())
-    ''' 
+     
     core_gene_name_list = write_core_gene_file("{0}/roary_output".format(output_dir), core_gene_file_path, df_complete)
     return core_gene_name_list
 
