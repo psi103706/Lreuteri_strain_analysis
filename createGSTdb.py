@@ -48,7 +48,6 @@ def write_core_gene_file(roary_output_path, core_gene_file_path, df_complete):
 
 def search_core_gene(df_genome_info, genome_id, core_gene_file_path, delta_output_path, snp_output_path, quiet):
     if not os.path.isfile("{0}/{1}.delta".format(delta_output_path, genome_id)):
-        print("{0}/{1}.delta".format(delta_output_path, genome_id))
         proc = run_process("nucmer {0}/core_gene_ref.fasta {1} -p {2}/{3}".format(core_gene_file_path, df_genome_info.loc[genome_id, 'genome_file'], delta_output_path, genome_id), print_only = False)
 
         for line in iter(proc.stdout.readline, b''):
@@ -199,9 +198,6 @@ def parse_align_fasta(df_genome_info, genome_id, core_gene_file_path, delta_outp
                             if var_dict is not None and curr in var_dict.keys():
                                 query_seq_align += var_dict[curr][1]
                                 ref_seq_align += var_dict[curr][0]
-                                
-                                if r_seq[curr - 1] != var_dict[curr][0]:
-                                    print(r_seq, curr, r_seq[curr - 1], var_dict[curr][0], var_dict[curr][1])
                                 
                             else:
                                 query_seq_align += r_seq[curr - 1]
@@ -390,9 +386,6 @@ def merge_gap_for_msa(df_genome_info, ref_id, core_gene_name_list, core_gene_fil
                     else:
                         for i in range(core_len_dict[core]):
                             query_seq_add += "-"
-                    
-                    if len(query_seq_add) != core_len_dict[core]:
-                        print(genome_id, core, (core in core_align_query_ref_dict.keys()), len(query_seq_add), core_len_dict[core])
                         
                     all_align_core_file.write(query_seq_add)
                     
