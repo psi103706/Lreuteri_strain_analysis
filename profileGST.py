@@ -47,8 +47,7 @@ def gst_profile(df_sample_info, gst_profile_file_path):
     for sample in df_sample_info.index.tolist():        
         if os.path.isfile("{0}/{1}.bracken".format(gst_profile_file_path, sample)) and os.path.isfile("{0}/{1}.kraken".format(gst_profile_file_path, sample)):
             df_bracken_result, read_count = parse_bracken_result(sample, gst_profile_file_path)
-            if read_count >= 20000:
-                gst_profile[sample] = df_bracken_result.to_dict()['relative abundance']
+            gst_profile[sample] = df_bracken_result.to_dict()['relative abundance']
                     
     return pd.DataFrame(gst_profile).fillna(0.0) 
 
