@@ -75,8 +75,7 @@ def gene_profile(df_sample_info, gene_profile_file_path):
     for sample in df_sample_info.index.tolist():
         if os.path.isfile("{0}/{1}.txt".format(gene_profile_file_path, sample)):
             gene_profile_dict, _, total_count = parse_mmseqs_result(sample, gene_profile_file_path)
-            if total_count >= 500:
-                gene_profile[sample] = gene_profile_dict
+            gene_profile[sample] = gene_profile_dict
                     
     return pd.DataFrame(gene_profile).fillna(0.0)
 
